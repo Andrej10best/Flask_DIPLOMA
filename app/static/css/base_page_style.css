@@ -1,0 +1,110 @@
+/* Настройка всей страницы */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0px;
+    font-family: Courier New;
+}
+
+/* Настройка фонового изображения сайта */
+.full-screen-img {
+    background-image: url('/static/site_background/back_img.jpg'); /* Замените на путь к вашему изображению */
+    background-size: cover; /* Заполнение всего экрана */
+    background-position: center; /* Центрирование изображения */
+    position: fixed; /* Фиксированное положение */
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Убедитесь, что изображение находится под другими элементами */
+}
+
+/* Настройка шапки сайта */
+.header {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 80px;
+    align-items: center;
+}
+
+.header .header-block {
+    display: flex;
+    margin: 0px 0px 0px 20px;
+}
+
+.header .header-block .title {
+    display: block;
+    margin: 0px 30px 0px 10px;
+    font-size: 50px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* Настройка основного блока сайта */
+.content {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+
+}
+
+.content .description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(236, 236, 236, 0);
+}
+
+.content .description .desc {
+    display: block;
+    text-align: left;
+    width: 1000px;
+    border: 1px solid #333;
+    border-radius: 30px;
+    padding: 30px;
+    backdrop-filter: blur(5px);
+}
+
+.content .description .desc .desc-title {
+    display: block;
+    color: white;
+    font-family: 'Courier New';
+    font-size: 38px;
+    font-weight: bold;
+    text-shadow: 
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+.content .description .desc .desc-desc {
+    display: block;
+    color: rgb(230, 230, 230);
+    font-family: 'Courier New';
+    font-size: 22px;
+}
+
+.content .description .desc .show-tour {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New';
+    font-size: 30px;
+    text-decoration: none;
+    border: 1px solid #333;
+    border-radius: 30px;
+    padding: 20px;
+    color: rgb(230, 230, 230);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.content .description .desc .show-tour:hover {
+    border-color: #000000;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+}

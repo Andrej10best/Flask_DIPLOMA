@@ -1,0 +1,107 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-users {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border: 1px solid black;
+    border-radius: 30px;
+    color: white;
+    backdrop-filter: blur(6px);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.list-users .string-head {
+    display: flex;
+    gap: 230px;
+    border-bottom: 1px solid grey;
+}
+
+.list-users .string-title-del {
+    display: block;
+    margin: 0 0 0 30px;
+}
+
+.list-users .string {
+    display: flex;
+    margin: 30px 0px 0 0;
+    align-items: center;
+}
+
+.list-users .user-name {
+    display: block;
+    width: 260px;
+}
+
+.list-users .user-email {
+    display: block;
+    width: 277px;
+}
+
+.list-users .user-phone {
+    display: block;
+    width: 298px;
+}
+
+.list-users .user-number_of_people {
+    display: block;
+    width: 344px;
+}
+
+.list-users .user-tour_id {
+    display: block;
+    width: 259px;
+}
+
+.list-users .user-button a {
+    text-decoration: none;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 10px 20px;
+    border-radius: 35px;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.list-users .user-button a:hover {
+    background-color: rgba(190, 190, 190, 0.4);
+    
+}
+
+.back {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+    padding: 20px 0px 20px 0px;
+    border: 1px solid black;
+    border-radius: 30px;
+    backdrop-filter: blur(6px);
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100px;
+    width: 400px;
+}
+
+
+.back a {
+    font-family: Courier New;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0);
+    text-decoration: none;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 24px;
+    padding: 10px 32px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.back a:hover {
+    background-color: rgba(190, 190, 190, 0.4);
+}

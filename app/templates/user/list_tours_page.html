@@ -1,0 +1,55 @@
+{% extends 'user/base_page.html' %}
+
+{% block head %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base_page_style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/list_tours_page_style.css') }}">
+    <title>Туры</title>
+</head>
+{% endblock %}
+
+{% block content %}
+    <div class="tours">
+        {% for tour in tour_models %}
+        <div class="show-tour">
+            <div class="titel-tour">
+                {{ tour.title }}
+            </div>
+            <div class="img-tour">
+                <img src="{{ url_for('static', filename='image/img_tour/' + tour.image_path) }}" alt="{{ tour.title }}" style="max-width: 300px; height: auto;">
+            </div>
+            <div class="desc-tour">
+                <div class="place-tour">
+                    <span>Место/край:</span>
+                    {{ tour.place }}
+                </div>
+                <div class="start-date-tour">
+                    <span>Дата начала тура:</span>
+                    {{ tour.start_date_tour }}
+                </div>
+                <div class="duration-tour">
+                    <span>Длительность тура:</span>
+                    {{ tour.duration }} дн.
+                </div>
+                <div class="max-people-tour">
+                    <span>Количество мест:</span>
+                    {{ tour.max_people }} чел.
+                </div>
+                <div class="av-places-tour">
+                    <span>Свободных мест:</span>
+                    {{ tour.available_places }} чел.
+                </div>
+                <div class="price-tour">
+                    <span>Цена за одного человека:</span>
+                    {{ tour.price_per_person }} руб.
+                </div>  
+            </div>
+            <div class="button-tour">
+                <a href="{{ url_for('current_tour', tour_id=tour.id) }}">Забронировать тур</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'user/base_page.html' %}
+
+{% block head %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base_page_style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/admin_delete_user_page_style.css') }}">
+    <title>Админ панель</title>
+</head>
+{% endblock %}
+
+{% block content %}
+<form method="post" enctype="multipart/form-data" class="form-delete">
+    {% for cat, msg in get_flashed_messages(True) %}
+        <div class="flash {{cat}}">{{ msg }}</div>
+    {% endfor %}
+    <div>
+        <label class="delete">Вы действительно хотите удалить пользователя?</label>
+    </div>
+    <div>
+        <input class="del" type="submit" name="action" value="Удалить пользователя">
+    </div>
+    <div class="back">
+        <a href="javascript:history.back()">Назад</a>
+    </div>
+</form>
+
+{% endblock %}

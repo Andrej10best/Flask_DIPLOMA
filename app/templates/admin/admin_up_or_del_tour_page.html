@@ -1,0 +1,51 @@
+{% extends 'user/base_page.html' %}
+
+{% block head %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base_page_style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/admin_up_or_del_tour_page_style.css') }}">
+    <title>Админ панель</title>
+</head>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="list-tours" >
+    <div class="string">
+        <div class="string-title">Заголовок</div>
+        <div class="string-title">Локация</div>
+        <div class="string-title">Дата начала</div>
+        <div class="string-int">Длительность</div>
+        <div class="string-int">Места</div>
+        <div class="string-int">Свободные места</div>
+        <div class="string-title">Цена за человека</div>
+        <div class="string-button">Изменить</div>
+        <div class="string-button">Удалить</div>
+    </div>
+    {% for tour in tour_models %}
+    <div class="string">
+        <input type="hidden" name="tour_id" value="{{ tour.id }}">
+        <div class="tour-title">{{ tour.title }}</div>
+        <div class="tour-title">{{ tour.place }}</div>
+        <div class="tour-title">{{ tour.start_date_tour }}</div>
+        <div class="tour-int">{{ tour.duration }} дн.</div>
+        <div class="tour-int">{{ tour.max_people }}</div>
+        <div class="tour-int">{{ tour.available_places }}</div>
+        <div class="tour-title">{{ tour.price_per_person }} руб.</div>
+        <div class="tour-button">
+            <a href="update/{{tour.id}}">Изменить</a>
+        </div>
+        <div class="tour-button">
+            <a href="delete/{{tour.id}}">Удалить</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="back">
+    <a href="javascript:history.back()">Назад</a>
+</div>
+{% endblock %}

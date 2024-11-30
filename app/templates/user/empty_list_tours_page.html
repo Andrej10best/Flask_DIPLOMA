@@ -1,0 +1,17 @@
+{% extends 'user/base_page.html' %}
+
+{% block head %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base_page_style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/error_page_style.css') }}">
+    <title>Пока пусто :(</title>
+</head>
+{% endblock %}
+
+{% block content %}
+<div class="error">
+    <span>На данный момент туры отсутствуют<br>Попробуйте зайти позже</span>
+</div>
+{% endblock %}

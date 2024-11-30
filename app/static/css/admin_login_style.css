@@ -1,0 +1,42 @@
+.form-admin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 300px 759px;
+    border: 1px solid black;
+    border-radius: 30px;
+    backdrop-filter: blur(6px);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.form-admin .field {
+    display: block;
+    margin: 0px 0px 30px;
+    width: 250px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.form-admin label {
+    display: block;
+    color: white;
+    margin: 0px 0px 5px;
+}
+
+.form-admin .sub {
+    font-family: Courier New;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0);
+    text-decoration: none;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 24px;
+    padding: 10px 32px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.form-admin .sub:hover {
+    background-color: rgba(190, 190, 190, 0.4);
+}

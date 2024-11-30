@@ -1,0 +1,38 @@
+{% extends 'user/base_page.html' %}
+
+{% block head %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base_page_style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/admin_add_tour_page_style.css') }}">
+    <title>Админ панель</title>
+</head>
+{% endblock %}
+
+{% block content %}
+<form method="post" enctype="multipart/form-data" class="form-tour">
+    {% for cat, msg in get_flashed_messages(True) %}
+    <div class="flash {{cat}}">{{ msg }}</div>
+    {% endfor %}
+    <label>Заголовок тура: </label><input class="field" type="text" name="title" value="не более 17 символов" required>
+    <label>Описание тура: </label><textarea class="field" name="description" required
+        style="resize: none; width: 65%; height: 100px;">не более 1100 символов</textarea>
+    <label>Локация тура: </label><input class="field" type="text" name="place" value="не более 27 символов" required>
+    <label>Дата начала тура: </label><input class="field" type="text" name="start_date_tour" value="ГГГГ-ММ-ДД"
+        required>
+    <label>Длительность в днях: </label><input class="field" type="text" name="duration" value="" required>
+    <label>Максимальное кол-во человек:</label><input class="field" type="text" name="max_people" value="" required>
+    <label>Свободные места: </label><input class="field" type="text" name="available_places" value="" required>
+    <label>Занятые места: </label><input class="field" type="text" name="occupied_places" value="0" required>
+    <label>Цена за человека: </label><input class="field" type="text" name="price_per_person" value="" required>
+    <!-- <label>Изображение: </label><input class="field-img" type="file" name="image_path" value="" required>
+    <div class="img-description">Изображение должно быть формата png, jpg, jpeg, квадратным и с разрешением не более 1000х1000</div> -->
+    <input class="sub" type="submit" value="Обновить тур">
+</form>
+
+<div class="back">
+    <a href="javascript:history.back()">Назад</a>
+</div>
+{% endblock %}

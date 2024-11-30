@@ -1,0 +1,46 @@
+{% extends 'user/base_page.html' %}
+
+{% block head %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base_page_style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/admin_clients_page_style.css') }}">
+    <title>Админ панель</title>
+</head>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="list">
+    <div class="list-users">
+        <div class="string-head">
+            <div class="string-title">Имя</div>
+            <div class="string-title">Email</div>
+            <div class="string-title">Телефон</div>
+            <div class="string-title">Кол-во людей</div>
+            <div class="string-title">Тур</div>
+            <div class="string-title-del">Удалить</div>
+        </div>
+        {% for user in user_models %}
+        <div class="string">
+            <div class="user-name">{{ user.name }}</div>
+            <div class="user-email">{{ user.email }}</div>
+            <div class="user-phone">{{ user.phone }}</div>
+            <div class="user-number_of_people">{{ user.number_of_people }}</div>
+            <div class="user-tour_id">{{ user.tour.title }}</div>
+            <div class="user-button">
+                <a href="delete/{{user.id}}/{{user.tour.id}}">Удалить</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="back">
+        <a href="javascript:history.back()">Назад</a>
+    </div>
+</div>
+
+{% endblock %}
